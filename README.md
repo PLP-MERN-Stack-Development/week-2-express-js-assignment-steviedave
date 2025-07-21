@@ -1,63 +1,199 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19962831&assignment_repo_type=AssignmentRepo)
-# Express.js RESTful API Assignment
+# 🛍️ Products API
 
-This assignment focuses on building a RESTful API using Express.js, implementing proper routing, middleware, and error handling.
+A simple, file-based product inventory API built using **Express.js**. This RESTful API allows users to perform CRUD operations (Create, Read, Update, Delete) on a product list, with all data stored persistently in a local `products.json` file. It’s a lightweight solution ideal for beginners or small-scale applications that don't require a full-fledged database.
 
-## Assignment Overview
+---
 
-You will:
-1. Set up an Express.js server
-2. Create RESTful API routes for a product resource
-3. Implement custom middleware for logging, authentication, and validation
-4. Add comprehensive error handling
-5. Develop advanced features like filtering, pagination, and search
+## 🚀 Features
 
-## Getting Started
+- ✅ Create new products
+- ✅ Retrieve all products
+- ✅ Prevent creation of duplicate products (by name)
+- ✅ Update product quantity
+- ✅ Delete products
+- ✅ Data persistence using JSON file (`products.json`)
+- ✅ API tested using Postman
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Run the server:
-   ```
-   npm start
-   ```
+---
 
-## Files Included
+## 🛠️ Tech Stack
 
-- `Week2-Assignment.md`: Detailed assignment instructions
-- `server.js`: Starter Express.js server file
-- `.env.example`: Example environment variables file
+- **Node.js**
+- **Express.js**
+- **Yarn** (as package manager)
+- **Postman** (for API testing)
+- **File-based storage** using Node's `fs` module
 
-## Requirements
+---
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Postman, Insomnia, or curl for API testing
+## 📂 Project Structure
 
-## API Endpoints
+```
+Products API/
+├── src/
+│   ├── model/
+│   │   └── Product.js
+│   ├── repository/
+│   │   └── ProductsRepository.js
+│   ├── product.routes.js
+│   └── server.js
+├── products.json
+├── package.json
+├── yarn.lock
+└── README.md
+```
 
-The API will have the following endpoints:
+---
 
-- `GET /api/products`: Get all products
-- `GET /api/products/:id`: Get a specific product
-- `POST /api/products`: Create a new product
-- `PUT /api/products/:id`: Update a product
-- `DELETE /api/products/:id`: Delete a product
+## 📦 Installation & Setup
 
-## Submission
+### Prerequisites
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+- Node.js installed
+- Yarn installed
 
-1. Complete all the required API endpoints
-2. Implement the middleware and error handling
-3. Document your API in the README.md
-4. Include examples of requests and responses
+### Clone the repository
 
-## Resources
+```bash
+git clone https://github.com/PLP-MERN-Stack-Development/week-2-express-js-assignment-steviedave.git
+cd week-2-express-js-assignment-steviedave
+```
 
-- [Express.js Documentation](https://expressjs.com/)
-- [RESTful API Design Best Practices](https://restfulapi.net/)
-- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) 
+### Install dependencies
+
+```bash
+yarn
+```
+
+### Start the development server
+
+```bash
+yarn dev
+```
+
+> The server runs on `http://localhost:3333`
+
+---
+
+## 📬 API Endpoints
+
+All endpoints are prefixed with `/products`.
+
+### ➕ Create a new product
+
+**POST** `/products`
+
+**Request Body (JSON):**
+```json
+{
+  "name": "Laptop",
+  "description": "A powerful gaming laptop",
+  "quantity": 5,
+  "price": 1500
+}
+```
+
+**Response:**
+- `201 Created` if successful
+- `400 Bad Request` if product already exists
+
+---
+
+### 📦 Get all products
+
+**GET** `/products`
+
+This endpoint returns all the products that have been created and stored in the system. Once your server is running, you can visit this endpoint directly in your browser or use Postman to send a `GET` request.
+
+🌐 To view your product list:
+- Open a browser or Postman
+- Enter the URL: `http://localhost:3333/products`
+- You should see an array of product objects in JSON format
+
+Example Response:
+```json
+[
+  {
+    "id": "uuid-value",
+    "name": "Laptop",
+    "description": "A powerful gaming laptop",
+    "quantity": 5,
+    "price": 1500,
+    "created_at": "2025-07-20T14:00:00.000Z"
+  }
+]
+```
+
+---
+
+### 🔄 Update quantity
+
+**PATCH** `/products/:id/quantity`
+
+**Request Body (JSON):**
+```json
+{
+  "quantity": 10
+}
+```
+
+---
+
+### ❌ Delete product
+
+**DELETE** `/products/:id`
+
+---
+
+## 💾 File-Based Storage
+
+All product data is saved persistently in a local file named `products.json`. This approach avoids the need for a database while still maintaining data between sessions.
+
+Whenever you create, update, or delete a product, the system automatically updates this file.
+
+---
+
+## 🧪 Postman Testing Screenshots
+
+Below are example screenshots from testing this API using [Postman](https://www.postman.com/). These visuals help confirm the expected behavior of each route.
+
+> ⚠️ _Replace the placeholder text below with actual screenshots once you've captured them._
+
+### 📸 Creating a New Product
+![Create Product Screenshot](screenshots/create-product.png)
+
+### 📸 Getting All Products
+![Get All Products Screenshot](screenshots/get-products.png)
+
+### 📸 Preventing Duplicate Entries
+![Duplicate Check Screenshot](screenshots/duplicate-product.png)
+
+### 📸 Updating Product Quantity
+![Update Quantity Screenshot](screenshots/update-quantity.png)
+
+### 📸 Deleting a Product
+![Delete Product Screenshot](screenshots/delete-product.png)
+
+---
+
+## 👨‍💻 Author
+
+**Stephen David Oduor**
+
+---
+
+## 🏁 Starting the Project
+
+To start the server in development mode:
+
+```bash
+yarn dev
+```
+
+Your API will now be live at `http://localhost:3333`, and you can begin interacting with it via Postman or your browser.
+
+---
+
+## 📄 License
+
+This project is open-source and free to use for learning and development purposes.
