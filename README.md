@@ -157,22 +157,14 @@ Whenever you create, update, or delete a product, the system automatically updat
 
 Below are example screenshots from testing this API using [Postman](https://www.postman.com/). These visuals help confirm the expected behavior of each route.
 
-> ⚠️ _Replace the placeholder text below with actual screenshots once you've captured them._
-
 ### 📸 Creating a New Product
-![Create Product Screenshot](screenshots/create-product.png)
+![Create Product Screenshot]("screenshots/Screenshot 2025-07-21 044810.png")
 
 ### 📸 Getting All Products
-![Get All Products Screenshot](screenshots/get-products.png)
+![Get All Products Screenshot]("screenshots/Screenshot 2025-07-21 032850.png")
 
-### 📸 Preventing Duplicate Entries
-![Duplicate Check Screenshot](screenshots/duplicate-product.png)
-
-### 📸 Updating Product Quantity
-![Update Quantity Screenshot](screenshots/update-quantity.png)
-
-### 📸 Deleting a Product
-![Delete Product Screenshot](screenshots/delete-product.png)
+### 📸 API local host port
+![API Screenshot]("screenshots/Screenshot 2025-07-21 044645")
 
 ---
 
