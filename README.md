@@ -160,6 +160,9 @@ Below are example screenshots from testing this API using [Postman](https://www.
 ### 📸 Creating a New Product  
 ![Create Product Screenshot](screenshots/Screenshot%202025-07-21%20044810.png)
 
+### 📸 Deleting Product  
+![Deleting Product Screenshot](screenshots/Screenshot%2025-07-21%044723.png)
+
 ### 📸 Getting All Products  
 ![Get All Products Screenshot](screenshots/Screenshot%202025-07-21%20032850.png)
 
