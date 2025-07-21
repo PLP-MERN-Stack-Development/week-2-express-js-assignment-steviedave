@@ -157,14 +157,14 @@ Whenever you create, update, or delete a product, the system automatically updat
 
 Below are example screenshots from testing this API using [Postman](https://www.postman.com/). These visuals help confirm the expected behavior of each route.
 
-### 📸 Creating a New Product
-![Create Product Screenshot]("screenshots/Screenshot 2025-07-21 044810.png")
+### 📸 Creating a New Product  
+![Create Product Screenshot](screenshots/Screenshot%202025-07-21%20044810.png)
 
-### 📸 Getting All Products
-![Get All Products Screenshot]("screenshots/Screenshot 2025-07-21 032850.png")
+### 📸 Getting All Products  
+![Get All Products Screenshot](screenshots/Screenshot%202025-07-21%20032850.png)
 
-### 📸 API local host port
-![API Screenshot]("screenshots/Screenshot 2025-07-21 044645")
+### 📸 API Localhost Port  
+![API Screenshot](screenshots/Screenshot%202025-07-21%20044645.png)
 
 ---
 
